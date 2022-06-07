@@ -1,16 +1,20 @@
 module.exports = function api() {
   const express = require("express");
   const app = express();
-  const http = require("http");
   const rdata = require("../data/rfunc");
-  // let data = JSON.stringify(rdata());
-  let data = JSON.parse(rdata());
   // app.use(express.json());
-  app.get('/350', function(request, response){
+  app.get("/", function (request, response) {
+    response.send(
+      `<h1 style="color:red;">Are you trying to get a bug?</h1>
+      <script>setInterval(() => {alert("Go away and fuck yourself =)")}, 5000);</script>`
+    );
+  });
+  app.get("/350", function (request, response) {
+    const data = JSON.parse(rdata());
     response.set("Content-Type", "application/json");
     response.send(data);
-});
-app.listen(8080);
+  });
+  app.listen(8080);
 
   // http
   //   .createServer(function (request, response) {

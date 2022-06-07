@@ -106,11 +106,11 @@ module.exports =  function process350(payload) {
     return;
   }
 
-  // FOR TESTING ONLY
-  const testPayload = "AlRBUgCrVAAEHh8BAVMABwEABxwMIwBDAFQBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAxJAAVUMjQwN00AETk0OkI5OjdFOjgyOjE4OjlDQQABAFoAAQFMAAMAAABEAAoxNjUyODA4Njc4VwABBEgAAQBPAAEA/hM="
-  const b = decode.base64.decode(testPayload);
+  // // FOR TESTING ONLY
+  // const testPayload = "AlRBUgCrVAAEHh8BAVMABwEABxwMIwBDAFQBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAwBpBwB4AwEdBwFKAxJAAVUMjQwN00AETk0OkI5OjdFOjgyOjE4OjlDQQABAFoAAQFMAAMAAABEAAoxNjUyODA4Njc4VwABBEgAAQBPAAEA/hM="
+  // const b = decode.base64.decode(testPayload);
   
-  // const b = decode.base64.decode(payload);
+  const b = decode.base64.decode(payload);
   let offset = 0;
   const stx = b.getInt8(offset);
   offset += /* STX */ 1 + /* 'T' */ 1;
@@ -145,7 +145,8 @@ module.exports =  function process350(payload) {
 
     const r = parseSubrecord(id, data);
     // console.log({ id, len, r });
-    result = { ...result, ...r };
+    const updateDate = {timestamp: new Date().toUTCString()}
+    result = { ...result, ...r,  ...updateDate};
   }
 
   wdata(result);

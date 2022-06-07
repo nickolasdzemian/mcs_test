@@ -21,7 +21,7 @@ module.exports = function client1() {
 
   // For testing only
   // setInterval(() => {
-    const send = Buffer.from('AlRRVwBXQwBUAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQc9pk=');
-    client1.publish('pizdapizda/94:B9:7E:82:18:9C/to', send, console.log);
+    // const send = Buffer.from('AlRRVwBXQwBUAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQcAAAdAAocABQdBWQc9pk=');
+    // client1.publish('pizdapizda/94:B9:7E:82:18:9C/to', send, console.log);
   // }, 5000);
 }
