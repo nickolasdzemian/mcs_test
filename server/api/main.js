@@ -6,7 +6,7 @@ module.exports = function api() {
   app.get("/", function (request, response) {
     response.send(
       `<h1 style="color:red;">Are you trying to get a bug?</h1>
-      <script>setInterval(() => {alert("Go away and fuck yourself =)")}, 5000);</script>`
+      <script>setInterval(() => {alert("Go away =)")}, 5000);</script>`
     );
   });
   app.get("/350", function (request, response) {
